@@ -2,7 +2,7 @@
 
 Example usage is provided in the "example" folder
 
-For detailed information, you can the explanatory notes in the source code.
+For detailed information, you can check the explanatory notes in the source code.
 
 # Installation
 
