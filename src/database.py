@@ -3,7 +3,7 @@ import subprocess
 import os
 import json
 import jsonlines
-from utils import jsonString, parseGFFAttributes
+import primerdesigner.utils as utils
 from urllib.parse import unquote
 import platform
 
@@ -255,7 +255,7 @@ class Database:
                     continue
                 # parsed_line is a dict having following fields
                 parsed_line = dict(zip(["seqid", "source", "type", "start", "end", "score", "strand", "phase", "attributes"], line.split("\t")))
-                attributes = parseGFFAttributes(parsed_line["attributes"])
+                attributes = utils.parseGFFAttributes(parsed_line["attributes"])
                 # has parent means this line is not top level
                 if "Parent" in attributes.keys():
                     if "product" in attributes.keys():
@@ -267,7 +267,7 @@ class Database:
                 if line[0] == "#":
                     continue
                 parsed_line = dict(zip(["seqid", "source", "type", "start", "end", "score", "strand", "phase", "attributes"], line.split("\t")))
-                attributes = parseGFFAttributes(parsed_line["attributes"])
+                attributes = utils.parseGFFAttributes(parsed_line["attributes"])
                 if "Parent" not in attributes.keys() and parsed_line["type"] == "gene":
                     id = f'"{attributes["ID"]}"'
                     gene_biotype = f'"{attributes["gene_biotype"]}"'
@@ -476,7 +476,7 @@ class Database:
             config["sqlite_db_path"] = sqlite_db_file
             config["blast_db_prefix"] = blast_db_prefix
             config["merged_fasta"] = merged_genome_file
-            f.write(jsonString(config))
+            f.write(utils.jsonString(config))
 
         print("Database building finished successfully")
         print("\n\n")
@@ -574,7 +574,7 @@ class Database:
 
         with open(output_catalog_path, "w") as f:
             f.truncate()
-            f.write(jsonString(output_catalog))
+            f.write(utils.jsonString(output_catalog))
 
 
 if __name__ == "__main__":

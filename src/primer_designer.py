@@ -1,20 +1,21 @@
 from cmath import inf
 from functools import cmp_to_key
 import subprocess
-from database import Database
+from primerdesigner.database import Database
 from Bio import SeqIO
 from Bio.SeqRecord import SeqRecord
 from Bio.Seq import Seq
 import os
-from utils import parseNCBIFastaDescription
+from primerdesigner.utils import parseNCBIFastaDescription
 from primer3 import bindings
 import re
-from Interface import MSA
+from primerdesigner.interface import MSA
 import time
 from math import ceil
 from tabulate import tabulate
 from pyfaidx import Fasta
 import platform
+from functools import cmp_to_key
 
 """
     Primer Design tool
@@ -454,10 +455,10 @@ class PrimerDesigner:
             os.makedirs(self.homologous_group_report_dir)
 
         self.PRIMER_GLOBAL_ARGS = PrimerDesigner.QPCR_PRIMER_DESIGN_PARAMETERS
-        self.PRIMER_GLOBAL_ARGS["PRIMER_PICK_INTERNAL_OLIGO"] = pick_probe
         if pick_probe is True:
             self.PRIMER_GLOBAL_ARGS.update(
                 {
+                    "PRIMER_PICK_INTERNAL_OLIGO": 1,
                     "PRIMER_PAIR_WT_IO_PENALTY": 1.0,
                     "PRIMER_INTERNAL_DNA_CONC": 50.0,
                     "PRIMER_INTERNAL_DNTP_CONC": 0.0,
