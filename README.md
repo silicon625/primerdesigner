@@ -29,18 +29,17 @@ mafft: https://mafft.cbrc.jp/alignment/software/
 A dataset is a group of files downloaded from ncbi dataset website: https://www.ncbi.nlm.nih.gov/data-hub/genome/. Users can also create their own dataset using genomic sequence fasta and gff annotation, but they must let the dataset have the same structure with the official one.
     A dataset must have the following structure:
 
-    - root_dir
-        - assembly_data_report.jsonl
-        - dataset_catalog.json
-        - \<first assembly folder named with assembly accession\>
-            - files
-            - ...
-        - \<second assembly folder named with assembly accession\>
-            - files
-            - ...
-        - \<other assembly folders named with assembly accession\>
-            - files
-            - ...
+    root_dir
+    ├── assembly_data_report.jsonl
+    ├── dataset_catalog.json
+    ├── <first assembly folder named with assembly accession>
+    │   ├── files
+    │   └── ...
+    ├── <second assembly folder named with assembly accession>
+    │   ├── files
+    │   └── ...
+    ├── <other assembly folders named with assembly accession>
+    └──...
 dataset_catlog.json contains the mappings of all files in the folder, this file is also used for detecting a dataset. assembly_data_report.jsonl contains the meta data for all assemblies. They are both not omittable. Be sure that customized datasets contain both of them and their format are correct.
 
 A database can be build from raw dataset by  primerdesigner.database.Database.build(input_dir = "your_input_dir", output_dir = "your_output_dir"). The input and output directory needs to be specified.
