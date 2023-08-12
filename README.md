@@ -28,6 +28,7 @@ mafft: https://mafft.cbrc.jp/alignment/software/
 # Dataset Directory Tree Structure and Database Construction
 A dataset is a group of files downloaded from ncbi dataset website: https://www.ncbi.nlm.nih.gov/data-hub/genome/. Users can also create their own dataset using genomic sequence fasta and gff annotation, but they must let the dataset have the same structure with the official one.
     A dataset must have the following structure:
+
     - root_dir
         - assembly_data_report.jsonl
         - dataset_catalog.json
