@@ -76,4 +76,6 @@ It has 6 parameters:
 
 ## Output
 
-The output contains a brief table about the sequences and amplification properties of primer sets which passed filtering and detailed reports for each homologous group found by BLAST and aligned by mafft, masked regions will be shown below the sequences. Also, if feasible primer sets are found in a homologous group, a report about all primers in this homologous group will be provided seperately.
+The output contains a brief table about the sequences and amplification properties of primer sets which passed filtering and detailed reports for each homologous group found by BLAST and aligned by mafft, masked regions will be shown below the sequences. 
+
+Also, if feasible primer sets are found in a homologous group, a report about all primers in this homologous group will be provided seperately.
