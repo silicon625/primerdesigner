@@ -42,9 +42,17 @@ A dataset is a group of files downloaded from ncbi dataset website: https://www.
     └──...
 dataset_catlog.json contains the mappings of all files in the folder, this file is also used for detecting a dataset. assembly_data_report.jsonl contains the meta data for all assemblies. They are both not omittable. Be sure that customized datasets contain both of them and their format are correct.
 
-A database can be build from raw dataset by  primerdesigner.database.Database.build(input_dir = "your_input_dir", output_dir = "your_output_dir"). The input and output directory needs to be specified.
+A database can be build from raw dataset by 
+```
+primerdesigner.database.Database.build(input_dir = "your_input_dir", output_dir = "your_output_dir").
+```
+The input and output directory needs to be specified.
 
-Once built, a database can be loaded again quickly by using primerdesigner.database.Database(config_path = "path_to_your_dataset_catlog"). You need to specify path to dataset_catalog.json of your database. 
+Once built, a database can be loaded again quickly by using 
+```
+primerdesigner.database.Database(config_path = "path_to_your_dataset_catlog")
+```
+You also need to specify path to dataset_catalog.json of your database. 
 
 # Pipeline Parameter Explaination
 
