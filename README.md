@@ -58,7 +58,7 @@ You also need to specify path to dataset_catalog.json of your database.
 
 The main entry point for the pipeline is primerdesigner.primer_designer.find().
 
-it has 6 parameters:
+It has 6 parameters:
 
  - db: database object loaded and constructed from raw dataset.
 
@@ -72,4 +72,4 @@ it has 6 parameters:
 
  - reference_id: In the pipeline, a reference genome will be selected from annotated genomes in "include" group according to the sequencing quality and coverage. The following homologous gene search and primer design is mainly based on the sequence of this assembly. You can also manually specify.
 
-
+*(WIP)Changing parameters for filtering homologous group and primer3 core will be supported before release.*
