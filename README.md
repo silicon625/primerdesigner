@@ -10,7 +10,7 @@ Examples are provided in the "example" folder. Including the directory tree of r
 
 For detailed information, you can also check the source code directly.
 
-# Installation
+## Installation
 
 Pythonic dependencies and the program itself can be installed by pip command
 
@@ -54,7 +54,7 @@ primerdesigner.database.Database(config_path = "path_to_your_dataset_catlog")
 ```
 You also need to specify path to dataset_catalog.json of your database. 
 
-# Pipeline Parameter Explaination
+## Pipeline Parameter Explaination
 
 The main entry point for the pipeline is primerdesigner.primer_designer.find().
 
@@ -73,3 +73,7 @@ It has 6 parameters:
  - reference_id: In the pipeline, a reference genome will be selected from annotated genomes in "include" group according to the sequencing quality and coverage. The following homologous gene search and primer design is mainly based on the sequence of this assembly. You can also manually specify.
 
 *(WIP)Changing parameters for filtering homologous group and primer3 core will be supported before release.*
+
+## Output
+
+The output contains a brief table about the sequences and amplification properties of primer sets which passed filtering and detailed reports for each homologous group found by BLAST and aligned by mafft, masked regions will be shown below the sequences. Also, if feasible primer sets are found in a homologous group, a report about all primers in this homologous group will be provided seperately.
