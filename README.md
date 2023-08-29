@@ -15,7 +15,7 @@ For detailed information, you can also check the source code directly.
 Pythonic dependencies and the program itself can be installed by pip command
 
 ```
-pip install primerdesigner-0.1.2-py3-none-any.whl
+pip install primerdesigner-0.1.5-py3-none-any.whl
 ```
 
 This program also requires BLAST and mafft to be installed, please check their official release
@@ -96,6 +96,27 @@ It has 6 parameters:
 - workers: thread number for BLAST and mafft.
 - pick_probe: whether picking internal oligo probe is necessary. Note that default parameters for primer3 is different when this flag is turned on or off. Processing logic is also a bit different. You should not turn on this option when designing primers without probe.
 - reference_id: In the pipeline, a reference genome will be selected from annotated genomes in "include" group according to the sequencing quality and coverage. The following homologous gene search and primer design is mainly based on the sequence of this assembly. You can also manually specify.
+
+Users can run the pipeline like this
+```python
+from primerdesigner.database import Database
+from primerdesigner.primer_designer import find
+
+Database.build(input_dir="./example_raw_dataset/",output_dir="./example_database/")
+db = Database(config_path="./example_database/config.json")
+find(
+    db=db,
+    include=[
+        "Cryptococcus gattii"
+    ],
+    exclude=[
+        "Cryptococcus neoformans"
+    ],
+    pick_probe=True,
+    reference_id="GCF_000185945.1",
+    workers=2
+)
+```
 
 *(WIP)Changing parameters for filtering homologous group and primer3 core will be supported before release.*
 
