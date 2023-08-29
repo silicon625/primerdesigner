@@ -26,7 +26,17 @@ mafft: https://mafft.cbrc.jp/alignment/software/
 
 *Using different versions of mafft or BLAST may lead to subtle differences in results.*
 
-# Dataset Directory Tree Structure and Database Construction
+## Example
+
+An example usage is provided in example folder. To run the script, install the package and move to the directory of example.py. Type
+```
+python3 example.py
+```
+in console and the example script will start running.
+
+An example output is also provided, you can use *tar* command to unzip
+
+## Dataset Directory Tree Structure and Database Construction
 
 A dataset is a group of files downloaded from ncbi dataset website: https://www.ncbi.nlm.nih.gov/data-hub/genome/. 
 
