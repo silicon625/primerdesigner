@@ -34,7 +34,7 @@ python3 example.py
 ```
 in console and the example script will start running.
 
-An example output is also provided, you can use *tar* command to unzip
+An example output is also provided, you can use *tar* command to unzip.
 
 ## Dataset Directory Tree Structure and Database Construction
 
