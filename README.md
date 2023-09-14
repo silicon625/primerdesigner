@@ -117,6 +117,7 @@ find(
     workers=2
 )
 ```
+The example above is used for searching primer and probe sets which are specific to Cryptococcus gattii while unable to amplify Cryptococcus neoformans, the id of reference genome assembly is "GCF_000185945.1" and working threads is 2.
 
 *(WIP)Changing parameters for filtering homologous group and primer3 core will be supported before release.*
 
