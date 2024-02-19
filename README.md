@@ -18,7 +18,7 @@ Pythonic dependencies and the program itself can be installed by pip command
 pip install primerdesigner-0.1.7-py3-none-any.whl
 ```
 
-**The package is also available on pypi website: https://pypi.org/project/primer-set-designer/**
+<font color=red>The package is also available on pypi website: https://pypi.org/project/primer-set-designer/</font>
 
 This program also requires BLAST and mafft to be installed, please check their official release
 
