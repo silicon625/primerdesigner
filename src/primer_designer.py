@@ -22,6 +22,7 @@ from functools import cmp_to_key
     APIs:
         find(database, include, exclude, output_dir)
             Pre-built pipeline for primer design
+            Other method is seperated steps of this pipeline
 
         PrimerDesigner(database, include, exclude, output_dir)
             Initialize primer design tool
@@ -54,7 +55,7 @@ from functools import cmp_to_key
 """
 
 
-def find(db: Database, include, exclude, workers, pick_probe=False, reference_id=None, output_dir=None):
+def find(db: Database, include, exclude, workers = 1, pick_probe=False, reference_id=None, output_dir=None):
     """
     Pre-built pipeline of primer Design tool
     """
@@ -486,7 +487,7 @@ class PrimerDesigner:
                     "PRIMER_INTERNAL_WT_GC_PERCENT_GT": 0.1,
                     "PRIMER_INTERNAL_WT_GC_PERCENT_LT": 0.1,
                     "PRIMER_INTERNAL_WT_HAIRPIN_TH": 0.0,
-                    "PRIMER_INTERNAL_WT_LIBRARY_MISHYB": 0.0,
+                    "PRIMER_IN'TERNAL_WT_LIBRARY_MISHYB": 0.0,
                     "PRIMER_INTERNAL_WT_NUM_NS": 0.0,
                     "PRIMER_INTERNAL_WT_SELF_ANY": 0.1,
                     "PRIMER_INTERNAL_WT_SELF_ANY_TH": 0.0,

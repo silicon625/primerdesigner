@@ -1,4 +1,4 @@
-# Primer designer version 0.1.5
+# Primer designer version 0.1.7
 
 ## Introduction
 
@@ -15,8 +15,10 @@ For detailed information, you can also check the source code directly.
 Pythonic dependencies and the program itself can be installed by pip command
 
 ```
-pip install primerdesigner-0.1.5-py3-none-any.whl
+pip install primerdesigner-0.1.7-py3-none-any.whl
 ```
+
+The package is also available on pypi website: https://pypi.org/project/primer-set-designer/
 
 This program also requires BLAST and mafft to be installed, please check their official release
 
@@ -47,11 +49,11 @@ A dataset is a group of files downloaded from ncbi dataset website: https://www.
     ├── assembly_data_report.jsonl
     ├── dataset_catalog.json
     ├──`<first assembly folder named with assembly accession>`
-    │   ├── files
-    │   └── ...
+    │   ├── files
+    │   └── ...
     ├── `<second assembly folder named with assembly accession>`
-    │   ├── files
-    │   └── ...
+    │   ├── files
+    │   └── ...
     ├── `<other assembly folders named with assembly accession>`
     └──...
 dataset_catlog.json contains the mappings of all files in the folder, this file is also used for detecting a dataset. assembly_data_report.jsonl contains the meta data for all assemblies. They are both not omittable. Be sure that customized datasets contain both of them and their format are correct.
